@@ -1,0 +1,13 @@
+.navbar-image{
+  width: 100px;
+}
+.my-navbar {
+  height: 150px;
+}
+.top-group {
+  display: inline-box;
+}
+.top-class {
+  float: left;
+  margin-right: 30px;
+}

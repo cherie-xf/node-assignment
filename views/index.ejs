@@ -5,40 +5,169 @@
         <meta name="viewport" content="width=device-width">
         <title>Order Form</title>
         <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/styles/mystyle.css">
+        </script><script src="/js/jquery.min.js"></script>
         </script><script src="/js/bootstrap.min.js"></script>
+        </script><script src="public/js/myapp.js"></script>
     </head>
-    <body class="contianer>
+
+    <body >
+      <div class="container">
+        <nav class="navbar navbar-default my-navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#"> <img class="navbar-image" alt="Brand" src="/public/images/pizza.png"/> </a>
+                </div>
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <form class="form-horizontal" id="pizza-form">
+                <fieldset class="form-group">
+                    <legend>Crust:</legend>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="crust" id="crust" value="thin" checked> Thin Crust </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="crust" id="crust" value="flatbread" checked> Flatbread Crust </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="crust" id="crust" value="thick" checked> Thick Crust </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="crust" id="crust" value="focaccia" checked> Focaccia </label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <legend>Size:</legend>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="size" id="size" value="small" checked> Small </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="size" id="size" value="medium" checked> Medium </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="size" id="size" value="large" checked> Large </label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group top-group">
+                    <input type="hidden" name="topping" id="topping" value="">
+                    <legend>Available Pizza Toppings: (no more than three items)</legend>
+                    <div class="top-class">
+                        <div class="sub-legend">Meat:</div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-1">Ground Beef </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-2">Ham </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-3">Diced Bacon </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-4">Italian Sausage </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-5">Chicken </label> 
+                        </div>
+                    </div>
+                    <div class="top-class">
+                        <div class="sub-legend">Vegetables:</div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-6">Green Peppers </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-7">Black Olives</label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-8">Pineapple </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-9">Mushrooms </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-10">Tomatoes </label> 
+                        </div>
+                    </div>
+                    <div class="top-class">
+                        <div class="sub-legend">Hot:</div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-11">Grushed Chilies </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-12">Jalapeno Peppers</label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-13">Banana Peppers </label> 
+                        </div>
+                    </div>
+                    <div class="top-class">
+                        <div class="sub-legend">Seafood:</div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-14">Shrimp </label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-15">Oysters</label> 
+                        </div>
+                        <div class="form-check"> 
+                            <label class="form-check-label"> 
+                                <input class="form-check-input" type="checkbox" value="topping-16">Anchovies </label> 
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox"> Remember me
+                    </label>
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Sign in</button>
+                </div>
+            </div>
+            </form>
+        </div>
         <div class="row">
             <div class="col-md-8">
-                <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label>
-                        <input type="checkbox"> Remember me
-                        </label>
-                    </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Sign in</button>
-                    </div>
-                </div>
-                </form>
             </div>
         </div>
+      </div>
     </body>
 </html>
