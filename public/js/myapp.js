@@ -1,5 +1,5 @@
 $(function(){
-    var limit = 6;
+    var limit = 3;
     $('.top-class input.form-check-input').on('change', function(evt) {
        if($('.top-class input.form-check-input:checked').length >= limit) {
               //this.checked = false;

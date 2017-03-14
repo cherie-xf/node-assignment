@@ -12,5 +12,105 @@
         "name": "Thick Crust",
         "value": "thick"
       }
+    ],
+    "size":[
+      {
+        "name": "Small",
+        "value": "small"
+      },
+      {
+        "name": "Medium",
+        "value": "medium"
+      },
+      {
+        "name": "Large",
+        "value": "large"
+      }
+    ],
+    "topping":[
+     {
+       "label": "Meat",
+       "items":[
+         {
+          "name": "Ground Beef",
+          "value": "1-1"
+         },
+         {
+          "name": "Ham",
+          "value": "1-2"
+         },
+         {
+          "name": "Diced Bacon",
+          "value": "1-3"
+         },
+         {
+          "name": "Italian Sausage",
+          "value": "1-4"
+         },
+         {
+          "name": "Chicken",
+          "value": "1-5"
+         }
+       ]
+     }, 
+     {
+       "label": "Vegetables",
+       "items":[
+         {
+          "name": "Green Peppers",
+          "value": "2-1"
+         },
+         {
+          "name": "Black Olives",
+          "value": "2-2"
+         },
+         {
+          "name": "Pineapple",
+          "value": "2-3"
+         },
+         {
+          "name": "Mushrooms",
+          "value": "2-4"
+         },
+         {
+          "name": "Tomatoes",
+          "value": "2-5"
+         }
+       ]
+     }, 
+     {
+       "label": "Hot",
+       "items":[
+         {
+          "name": "Grushed Chilies",
+          "value": "3-1"
+         },
+         {
+          "name": "Jalapeno Peppers",
+          "value": "3-2"
+         },
+         {
+          "name": "Banana Peppers",
+          "value": "3-3"
+         }
+       ]
+     }, 
+     {
+       "label": "Seafood",
+       "items":[
+         {
+          "name": "Shrimp",
+          "value": "4-1"
+         },
+         {
+          "name": "Oysters",
+          "value": "4-2"
+         },
+         {
+          "name": "Anchovies",
+          "value": "4-3"
+         }
+       ]
+     } 
     ]
 }}

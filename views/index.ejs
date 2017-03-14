@@ -1,140 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Order Form</title>
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="public/styles/mystyle.css">
-        </script><script src="/js/jquery.min.js"></script>
-        </script><script src="/js/bootstrap.min.js"></script>
-        </script><script src="public/js/myapp.js"></script>
+        <% include ./partials/head %>
     </head>
 
     <body >
       <div class="container">
-        <nav class="navbar navbar-default my-navbar">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                  <a class="navbar-brand" href="#"> <img class="navbar-image" alt="Brand" src="/public/images/pizza.png"/> </a>
-                </div>
-            </div>
-        </nav>
+        <header>
+        <% include ./partials/header %>
+        </header>
+        <main>
         <div class="jumbotron">
             <form class="form-horizontal" id="pizza-form">
                 <fieldset class="form-group">
                     <legend>Crust:</legend>
+                    <% if(data && data.data) data.data.crust.forEach(function(item){%>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="crust" id="crust" value="thin" checked> Thin Crust </label>
+                            <input type="radio" class="form-check-input" name="crust" id="crust" value="<%=item.value%>" checked> <%=item.name%></label>
                     </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="crust" id="crust" value="flatbread" checked> Flatbread Crust </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="crust" id="crust" value="thick" checked> Thick Crust </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="crust" id="crust" value="focaccia" checked> Focaccia </label>
-                    </div>
+
+                    <%});%>
                 </fieldset>
                 <fieldset class="form-group">
                     <legend>Size:</legend>
+                    <% if(data && data.data) data.data.size.forEach(function(item){%>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="size" id="size" value="small" checked> Small </label>
+                            <input type="radio" class="form-check-input" name="size" id="size" value="<%=item.value%>" checked> <%=item.name%></label>
                     </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="size" id="size" value="medium" checked> Medium </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="size" id="size" value="large" checked> Large </label>
-                    </div>
+                    <%});%>
                 </fieldset>
                 <fieldset class="form-group top-group">
                     <input type="hidden" name="topping" id="topping" value="">
                     <legend>Available Pizza Toppings: (no more than three items)</legend>
-                    <div class="top-class">
-                        <div class="sub-legend">Meat:</div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-1">Ground Beef </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-2">Ham </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-3">Diced Bacon </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-4">Italian Sausage </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-5">Chicken </label> 
-                        </div>
-                    </div>
-                    <div class="top-class">
-                        <div class="sub-legend">Vegetables:</div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-6">Green Peppers </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-7">Black Olives</label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-8">Pineapple </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-9">Mushrooms </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-10">Tomatoes </label> 
-                        </div>
-                    </div>
-                    <div class="top-class">
-                        <div class="sub-legend">Hot:</div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-11">Grushed Chilies </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-12">Jalapeno Peppers</label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-13">Banana Peppers </label> 
-                        </div>
-                    </div>
-                    <div class="top-class">
-                        <div class="sub-legend">Seafood:</div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-14">Shrimp </label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-15">Oysters</label> 
-                        </div>
-                        <div class="form-check"> 
-                            <label class="form-check-label"> 
-                                <input class="form-check-input" type="checkbox" value="topping-16">Anchovies </label> 
-                        </div>
-                    </div>
+                        <% if(data && data.data) data.data.topping.forEach(function(group){%>
+                            <div class="top-class">
+                                <div class="sub-legend"><%=group.label%></div>
+                                <% if(group.items) group.items.forEach(function(item){%>
+                                    <div class="form-check"> 
+                                        <label class="form-check-label"> 
+                                            <input class="form-check-input" type="checkbox" value="<%=item.value%>"><%=item.name%></label> 
+                                    </div>
+                                <%});%>
+                            </div>
+                        <%});%>
                 </fieldset>
                 <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
@@ -168,6 +78,10 @@
             <div class="col-md-8">
             </div>
         </div>
+        </main>
+        <footer>
+        <% include ./partials/footer %>
+        </footer>
       </div>
     </body>
 </html>
