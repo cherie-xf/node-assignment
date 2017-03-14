@@ -46,37 +46,47 @@
                             </div>
                         <%});%>
                 </fieldset>
-                <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <legend>Select the quantity:(1 - 100)</legend>
+            <div class="form-group">
+                <div class="col-sm-4">
+                  <input name="number" maxlength="3" size="2" min="1" max="100" type="number" value="1"/>
+                </div>
+            </div>
+            <legend>Customer Info</legend>
+            <div class="form-group">
+                <label for="tel" class="col-sm-2 control-label">Telephone</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="(555)-555-5555">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <label for="address" class="col-sm-2 control-label">Address</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                  <input type="text" class="form-control" id="address" name="address" placeholder="">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                    <label>
-                    <input type="checkbox"> Remember me
-                    </label>
-                </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Sign in</button>
+                <button type="submit" class="btn btn-default">Submit</button>
                 </div>
             </div>
             </form>
         </div>
         <div class="row">
-            <div class="col-md-8">
+          <% if(data && data.data) data.data.cost.forEach(function(group){%>
+            <div class="col-md-3">
+              <div class="panel panel-default">
+                <div class="panel-heading"><%=group.label%></div>
+                <div class="panel-body">
+                  <ul class="list-group">
+                      <% if(group.detail) group.detail.forEach(function(item){%>
+                      <li class="list-group-item"><%=item.text%></li>
+                      <%});%>
+                   </ul>
+                </div>
+              </div>
             </div>
+         <%});%>
         </div>
         </main>
         <footer>

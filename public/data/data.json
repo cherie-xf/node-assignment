@@ -112,5 +112,79 @@
          }
        ]
      } 
+    ],
+    "cost": [
+      {
+        "label": "With 1 Topping",
+        "detail": [
+           {
+              "text": " Small($7.99)"
+           },{
+              "text": " Medium($9.99)"
+           },{
+              "text": " Large($11.99)"
+           }
+        ]
+      },
+      {
+        "label": "With 2 Topping",
+        "detail": [
+           {
+              "text": " Small($8.99)"
+           },{
+              "text": " Medium($10.99)"
+           },{
+              "text": " Large($12.99)"
+           }
+        ]
+      },
+      {
+        "label": "With 3 Topping",
+        "detail": [
+           {
+              "text": " Small($9.99)"
+           },{
+              "text": " Medium($12.99)"
+           },{
+              "text": " Large($13.99)"
+           }
+        ]
+      },
+      {
+        "label": "With 4 Topping",
+        "detail": [
+           {
+              "text": " Small($10.99)"
+           },{
+              "text": " Medium($12.99)"
+           },{
+              "text": " Large($14.99)"
+           }
+        ]
+      },
+      {
+        "label": "With 5 Topping",
+        "detail": [
+           {
+              "text": " Small($11.99)"
+           },{
+              "text": " Medium($13.99)"
+           },{
+              "text": " Large($15.99)"
+           }
+        ]
+      },
+      {
+        "label": "With 6 Topping",
+        "detail": [
+           {
+              "text": " Small($12.99)"
+           },{
+              "text": " Medium($14.99)"
+           },{
+              "text": " Large($16.99)"
+           }
+        ]
+      }
     ]
 }}
