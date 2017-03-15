@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Sample</title>
-</head>
-<body>
-<h1><%= title %></h1>
-</body>
+    <head>
+        <% include ./partials/head %>
+    </head>
+    <body>
+      <div class="container">
+        <header>
+        <% include ./partials/header %>
+        </header>
+        <main>
+        <% include ./partials/alert %>
+        <div class="jumbotron">
+            <legend>Pizza Info</legend>
+            <div class="row">
+                <div class="col-md-2">Crust :</div>
+                <div class="col-md-9"><%=data.data.crust.filter(function(item){return item.value === params.crust;})[0].name%></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Size :</div>
+                <div class="col-md-9"><%=data.data.size.filter(function(item){return item.value === params.size;})[0].name%></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Toppings :</div>
+                <div class="col-md-9">
+                    <% 
+                        var items = data.data.topping.reduce(function(res,group){ return res.concat(group.items);}, []);
+                        var topvalue = params.topping.split(',').reduce(function(res, top){
+                            return [res ,items.filter(function(item){return item.value === top;})[0].name].join(";");
+                        }, '');
+                    %>
+                    <%=topvalue%>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Quantity :</div>
+                <div class="col-md-9"><%= params.quantity%></div>
+            </div>
+            <legend>Customer Info</legend>
+            <div class="row">
+                <div class="col-md-2">Telephone :</div>
+                <div class="col-md-9"><%= params.customer.tel%></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">Address :</div>
+                <div class="col-md-9"><%= params.customer.address%></div>
+            </div>
+        </div>
+        </main>
+      </div>
+    </body>
 </html>

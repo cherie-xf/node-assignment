@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var fs = require('fs');
 var data = [];
+var calc = require('./util/priceCalculator.js');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
@@ -21,13 +22,23 @@ app.get('/',(req, res) =>{
     });
 });
 app.post('/order',(req, res) =>{
+    fs.readFile('public/data/data.json', 'utf8', function (err, data) {
+        if (err) throw err; // we'll not consider error handling for now
+        data = JSON.parse(data);
+        var params = {};
+        params.crust = req.body.crust;
+        params.size = req.body.size;
+        params.topping = req.body.topping;
+        params.quantity = req.body.number;
+        params.customer = {};
+        params.customer.tel = req.body.tel;
+        params.customer.address = req.body.address;
+        var cost = new calc().getCost(params.size, params.topping.split(',').length, params.quantity);
+        params.cost = cost;
 
-    console.log();
-    var a = parseInt(req.body.a);
-    var b = parseInt(req.body.b);
-    var sum = a+b;
+        res.render('order', {data: data, params: params});
+    });
 
-    res.render('order', {a: a, b:b, sum: sum});
 
 });
 

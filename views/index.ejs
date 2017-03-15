@@ -12,7 +12,7 @@
         <main>
         <% include ./partials/alert %>
         <div class="jumbotron">
-            <form class="form-horizontal" id="pizza-form">
+            <form class="form-horizontal" id="pizza-form" action="/order" method="post">
                 <fieldset class="form-group">
                     <legend>Crust:</legend>
                     <% if(data && data.data) data.data.crust.forEach(function(item){%>

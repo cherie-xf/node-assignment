@@ -25,4 +25,5 @@
   left : 30%;
   width: 40%;
   height: 250px;
+  z-index:100;
 }
