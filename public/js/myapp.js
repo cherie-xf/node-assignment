@@ -3,6 +3,36 @@ $(function(){
     var successAlert = $("#success-alert");
     var limit = 6;
     alertClean();
+
+    $('[data-toggle=confirmation]').confirmation({
+      rootSelector: '[data-toggle=confirmation]',
+        // other options
+        onConfirm: function() {
+          var order = $('[data-toggle=confirmation]').data('order')
+          var confirmBtns = $('.before-order');
+          var goBackBtns = $('.after-order');
+          $.ajax({
+            type: 'POST',
+            url: '/confirm',
+            data: JSON.stringify({'order': order}),
+            dataType: 'json',
+            contentType: 'application/json; chartset=utf-8',
+            success: function(data, status){
+              if(data){
+                successAlert.find('ul').append(" make order success! ");
+                successAlert.fadeIn();
+                confirmBtns.css('display', 'none');
+                goBackBtns.css('display', 'block');
+              } else {
+                failedAlert.find('ul').append(" make order failed, try again! ");
+                failedAlert.fadeIn();
+              }
+            },
+            error: function(xhr, ajaxOptions, thrownError){}
+          });
+        },
+    });
+
     $('.top-class input.form-check-input').on('change', function(evt) {
        if($('.top-class input.form-check-input:checked').length >= limit) {
               //this.checked = false;
@@ -25,12 +55,12 @@ $(function(){
       var topping = $("#topping").val();
       var tele = $("#tel").val();
       var address = $("#address").val();
-      var phone_pattern = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/;
+      var phone_pattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
       var message = [];
       if(!$.trim(topping)){
         message.push('<li>please select toppings;</li>');
       }
-      if(!$.trim(tele) && !phone_pattern.test( tele)){
+      if(!$.trim(tele) || !phone_pattern.test(tele)){
         message.push('<li>please input valid telephone number;</li>');
       }
       if(!$.trim(address)){

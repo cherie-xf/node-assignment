@@ -21,4 +21,8 @@ module.exports = class PriceCalculator{
        return (baseCost + parseInt(topCount)) * parseInt(quantity);
     }
 
+    getRandomTime(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
 }

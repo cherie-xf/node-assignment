@@ -51,6 +51,24 @@
                 <div class="col-md-9"><%= params.cost%></div>
             </div>
         </div>
+
+        <div class="before-order">
+            <button class="btn btn-large btn-primary" 
+                data-order="<%=JSON.stringify(params)%>"
+                data-toggle="confirmation" 
+                data-btn-ok-label="Continue" 
+                data-btn-ok-class="btn-success" 
+                data-btn-ok-icon="glyphicon glyphicon-share-alt"
+                data-btn-cancel-label="Cancel" 
+                data-btn-cancel-class="btn-danger" 
+                data-btn-cancel-icon="glyphicon glyphicon-ban-circle"
+                data-title="Please confirm the infomation" 
+                data-content="order delivery in <%=params.time%> minutes"> Confirmation </button>
+            <a class="btn btn-warning" href="/">Cancel</a>
+        </div>
+        <div class="after-order">
+            <a class="btn btn-default" href="/">Go Back To Home Page</a>
+        </div>
         </main>
       </div>
     </body>
